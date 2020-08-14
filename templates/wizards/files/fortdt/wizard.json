@@ -1,7 +1,7 @@
 {
     "version": 1,
     "supportedProjectTypes": [ ],
-    "id": "C.Module",
+    "id": "C.ModuleDT",
     "category": "O.Fortran",
     "trDescription": "Creates a Fortran module with data type declarations for integers and floating point numbers.",
     "trDisplayName": "Fortran datatype constants module file",
