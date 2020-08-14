@@ -1,0 +1,44 @@
+{
+    "version": 1,
+    "supportedProjectTypes": [ ],
+    "id": "C.Module",
+    "category": "O.Fortran",
+    "trDescription": "Creates a Fortran module with data type declarations for integers and floating point numbers.",
+    "trDisplayName": "Fortran datatype constants module file",
+    "trDisplayCategory": "Fortran",
+    "iconText": "f90",
+    "enabled": "%{JS: value('Plugins').indexOf('CppEditor') >= 0}",
+
+    "options": [
+        { "key": "FileName", "value": "%{JS: Util.fileName(value('TargetPath'), '.f90')}" },
+        { "key": "Name", "value": "%{JS: Util.baseName(value('FileName'))}"}
+    ],
+
+    "pages" :
+    [
+        {
+            "trDisplayName": "Location",
+            "trShortTitle": "Location",
+            "typeId": "File",
+            "enabled": true
+        },
+        {
+            "trDisplayName": "Project Management",
+            "trShortTitle": "Summary",
+            "typeId": "Summary"
+        }
+    ],
+    "generators" :
+    [
+        {
+            "typeId": "File",
+            "data":
+            {
+                "source": "module.f90",
+                "target": "%{FileName}",
+                "openInEditor": true,
+                "options": { "key": "ModuleName", "value": "%{Name}" }
+            }
+        }
+    ]
+}

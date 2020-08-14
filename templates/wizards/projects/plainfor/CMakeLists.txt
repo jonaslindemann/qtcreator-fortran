@@ -4,4 +4,6 @@ project(%{ProjectName} LANGUAGES Fortran)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-add_executable(%{ProjectName} main.f90)
+file(GLOB fortran_files *.f90)
+
+add_executable(%{ProjectName} ${fortran_files})
