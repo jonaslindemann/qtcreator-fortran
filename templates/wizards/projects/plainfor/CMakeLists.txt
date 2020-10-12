@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.5)
 
+if (APPLE)
+        set(CMAKE_Fortran_COMPILER "/usr/local/bin/gfortran")
+endif()
+
 project(%{ProjectName} LANGUAGES Fortran)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
