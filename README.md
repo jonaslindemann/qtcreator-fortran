@@ -15,6 +15,7 @@ Download this archive:
 Unzip the archive:
 
 	unzip master.zip
+	mv qtcreator-fortran-master/* .
 
 Restart Qt Creator.
 
