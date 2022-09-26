@@ -23,13 +23,13 @@ Restart Qt Creator.
 
 ## Windows 
 
-Open the **%appdata%**\QtProject\qtcreator folder in explorer.
+Open the **%appdata%\QtProject\qtcreator** folder in explorer.
 
 Download this archive into the above folder:
 
 	wget https://github.com/jonaslindemann/qtcreator-fortran/archive/master.zip
 
-Open the zip-file and go into the **qtcreator-fortran-master** folder in the zip file. Select all files and press **Ctrl+C**. Paste the files in the **%appdata%**\QtProject\qtcreator folder. 
+Open the zip-file and go into the **qtcreator-fortran-master** folder in the zip file. Select all files and press **Ctrl+C**. Paste the files in the **%appdata%\QtProject\qtcreator** folder. 
 
 # Usage
 
