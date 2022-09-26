@@ -4,6 +4,8 @@ This project adds support for Fortran projects and source files in Qt Creator as
 
 # Installation
 
+## Linux/macOS
+
 Go to the user configuration directory of Qt Creator
 
 	cd ~/.config/QtProject/qtcreator
@@ -18,6 +20,16 @@ Unzip the archive:
 	mv qtcreator-fortran-master/* .
 
 Restart Qt Creator.
+
+## Windows 
+
+Open the **%appdata%**\QtProject\qtcreator folder in explorer.
+
+Download this archive into the above folder:
+
+	wget https://github.com/jonaslindemann/qtcreator-fortran/archive/master.zip
+
+Open the zip-file and go into the **qtcreator-fortran-master** folder in the zip file. Select all files and press **Ctrl+C**. Paste the files in the **%appdata%**\QtProject\qtcreator folder. 
 
 # Usage
 
