@@ -1,21 +1,17 @@
 {
     "version": 1,
-    "supportedProjectTypes": [ "CMakeProjectManager.CMakeProject", "Qbs.QbsProject", "Qt4ProjectManager.Qt4Project" ],
+    "supportedProjectTypes": [ "CMakeProjectManager.CMakeProject" ],
     "id": "R.Fortran F2PY Extension",
     "category": "I.Projects",
     "trDescription": "Creates a Fortran F2PY extension module skeleton.",
     "trDisplayName": "Fortran F2PY Extension",
     "trDisplayCategory": "Non-Qt Project",
     "icon": "../../global/consoleapplication.png",
-    "enabled": "%{JS: value('Plugins').indexOf('CppEditor') >= 0 && (value('Plugins').indexOf('QmakeProjectManager') >= 0 || value('Plugins').indexOf('QbsProjectManager') >= 0 || value('Plugins').indexOf('CMakeProjectManager') >= 0)}",
+    "enabled": "%{JS: value('Plugins').indexOf('CMakeProjectManager') >= 0}",
 
     "options":
     [
-        { "key": "ProjectFile", "value": "%{JS: '%{BuildSystem}' === 'qmake' ? '%{ProFile}' : ('%{BuildSystem}' === 'cmake' ? '%{CMakeFile}' : '%{QbsFile}')}" },
-        { "key": "ProFile", "value": "%{JS: Util.fileName('%{ProjectDirectory}/%{ProjectName}', 'pro')}" },
-        { "key": "QbsFile", "value": "%{JS: Util.fileName('%{ProjectDirectory}/%{ProjectName}', 'qbs')}" },
-        { "key": "CMakeFile", "value": "%{ProjectDirectory}/CMakeLists.txt" },
-        { "key": "CppFileName", "value": "%{JS: 'main.' + Util.preferredSuffix('text/x-c++src')}" }
+        { "key": "ProjectFile", "value": "%{ProjectDirectory}/CMakeLists.txt" }
     ],
 
     "pages":
@@ -41,33 +37,6 @@
             ]
         },
         {
-            "trDisplayName": "Define Build System",
-            "trShortTitle": "Build System",
-            "typeId": "Fields",
-            "enabled": "%{JS: ! %{IsSubproject}}",
-            "data":
-            [
-                {
-                    "name": "BuildSystem",
-                    "trDisplayName": "Build system:",
-                    "type": "ComboBox",
-                    "persistenceKey": "BuildSystemType",
-                    "data":
-                    {
-                        "index": 0,
-                        "items":
-                        [
-                            {
-                                "trKey": "CMake",
-                                "value": "cmake",
-                                "condition": "%{JS: value('Plugins').indexOf('CMakeProjectManager') >= 0}"
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
-        {
             "trDisplayName": "Kit Selection",
             "trShortTitle": "Kits",
             "typeId": "Kits",
@@ -88,8 +57,7 @@
             [
                 {
                     "source": "CMakeLists.txt",
-                    "openAsProject": true,
-                    "condition": "%{JS: '%{BuildSystem}' === 'cmake'}"
+                    "openAsProject": true
                 },
                 {
                     "source": "extmodule_const.f90",
@@ -105,6 +73,10 @@
                     "source": "extmodule_impl.f90",
                     "target": "%{ModuleName}_impl.f90",
                     "openInEditor": true
+                },
+                {
+                    "source": "f2py_f2cmap",
+                    "target": ".f2py_f2cmap"
                 },
                 {
                     "source": "../git.ignore",

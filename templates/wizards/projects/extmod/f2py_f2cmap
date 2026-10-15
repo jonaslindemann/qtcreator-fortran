@@ -1,0 +1,4 @@
+{
+    'real': {'rk': 'double', 'rkd': 'double', 'rks': 'float'},
+    'integer': {'ik': 'int', 'ik18': 'long_long', 'ik9': 'int', 'ik4': 'short', 'ik2': 'signed_char'}
+}

@@ -4,7 +4,21 @@ This project adds support for Fortran projects and source files in Qt Creator as
 
 # Installation
 
-## Linux/macOS
+## Using the install script (all platforms)
+
+Clone or download this repository and run the install script with Python 3:
+
+	python3 install.py
+
+This copies the templates and syntax highlighter into the Qt Creator user configuration directory (**~/.config/QtProject/qtcreator** on Linux/macOS, **%APPDATA%\QtProject\qtcreator** on Windows). Restart Qt Creator afterwards.
+
+Other options:
+
+	python3 install.py --dry-run      # show what would be installed
+	python3 install.py --dest DIR     # install into a custom configuration directory
+	python3 install.py --uninstall    # remove the installed files
+
+## Manual installation on Linux/macOS
 
 Go to the user configuration directory of Qt Creator
 
@@ -21,7 +35,7 @@ Unzip the archive:
 
 Restart Qt Creator.
 
-## Windows 
+## Manual installation on Windows
 
 Open the **%appdata%\QtProject\qtcreator** folder in explorer.
 

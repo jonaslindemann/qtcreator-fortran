@@ -9,7 +9,7 @@
     "iconText": "f90",
     "enabled": "%{JS: value('Plugins').indexOf('CppEditor') >= 0}",
 
-    "options": { "key": "FileName", "value": "%{JS: Util.fileName(value('TargetPath'), Util.preferredSuffix('text/x-c++src'))}" },
+    "options": { "key": "FileName", "value": "%{JS: Util.fileName(value('TargetPath'), '.f90')}" },
 
     "pages" :
     [
